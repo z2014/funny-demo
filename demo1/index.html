@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>introduction</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+    canvas{/*
+    	width: 800px;
+    	height: 600px;*/
+    	background-color: #ccc;
+    	border: 1px solid black;
+        position: relative;
+    }
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="300" height="200"></canvas>
+	<script type="text/javascript">
+	var canvas = document.getElementById('canvas');
+		var context = canvas.getContext('2d');
+		var img = new Image();
+		img.src = 'img/0.jpg';
+		Promise.all([canvas,context,img]).then(function(msg){
+			var cvs = msg[0];
+			var cxt = msg[1];
+			var img = msg[2];
+            cvs.onmousemove = function(ev) {
+            	var x = ev.clientX;
+            	var y = ev.clientY;
+            	cxt.beginPath();
+            	cxt.save();
+            	cxt.arc(x,y,30,0,Math.PI*2);
+            	cxt.clip();
+                cxt.drawImage(img,0,0,300,200);
+                cxt.closePath();
+                cxt.restore();
+            }
+		})
+        
+        
+
+
+
+		
+	</script>
+</body>
+</html>
