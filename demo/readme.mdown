@@ -1,2 +1,2 @@
 ### 使用canvas做得一个刮刮乐效果，顺便用一下promise
-[效果显示](https://github.com/z2014/funny-demo/demo1/index.html)
+[效果显示](https://z2014.github.com/funny-demo/demo1/index.html)
