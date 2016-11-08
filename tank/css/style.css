@@ -1,0 +1,71 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.center{
+	width: 600px;
+	height: 600px;
+	border: 1px solid #ccc;
+	margin: 0 auto;
+}
+.map tr td{
+    width: 60px;
+    height: 60px;/*
+    border: 1px solid red;*/
+}
+#bot-left{
+	border-radius: 0 0 0 60px;
+	border-left: 1px solid red;
+	border-bottom: 1px solid red;
+}
+#bot-right{
+	border-radius: 0 0 60px 0;
+	border-right: 1px solid red;
+	border-bottom: 1px solid red;
+}
+#top-right{
+	border-radius: 0 60px 0 0;
+	border-right: 1px solid blue;
+	border-top: 1px solid blue;
+}
+#top-left{
+	border-radius: 60px 0 0 0;
+	border-left: 1px solid blue;
+	border-top: 1px solid blue;
+}
+#setting{
+	position: absolute;
+	width: 250px;
+	top: 20px;
+}
+button{
+	width: 50px;
+	height: 25px;
+}
+.block{
+	background-color: yellow;
+}
+.grass{
+	background-color: green;
+}
+.wall{
+	background-color: silver;
+}
+.mytank{
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	bottom: 0px;
+	background-color: black;
+	border-radius: 40px 40px 0 0;
+}
+#tank{
+	position: relative;
+}
+.bullet{
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	background-color: red;
+	position: absolute;
+}
