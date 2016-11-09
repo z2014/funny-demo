@@ -13,29 +13,29 @@
     height: 60px;/*
     border: 1px solid red;*/
 }
-#bot-left{
+.bot-left{
 	border-radius: 0 0 0 60px;
 	border-left: 1px solid red;
 	border-bottom: 1px solid red;
 }
-#bot-right{
+.bot-right{
 	border-radius: 0 0 60px 0;
 	border-right: 1px solid red;
 	border-bottom: 1px solid red;
 }
-#top-right{
+.top-right{
 	border-radius: 0 60px 0 0;
 	border-right: 1px solid blue;
 	border-top: 1px solid blue;
 }
-#top-left{
+.top-left{
 	border-radius: 60px 0 0 0;
 	border-left: 1px solid blue;
 	border-top: 1px solid blue;
 }
 #setting{
 	position: absolute;
-	width: 250px;
+	width: 280px;
 	top: 20px;
 }
 button{
@@ -51,6 +51,9 @@ button{
 .wall{
 	background-color: silver;
 }
+.default{
+	background-color: white;
+}
 .mytank{
 	width: 40px;
 	height: 40px;
@@ -59,7 +62,7 @@ button{
 	background-color: black;
 	border-radius: 40px 40px 0 0;
 }
-#tank{
+.tank{
 	position: relative;
 }
 .bullet{
@@ -68,4 +71,9 @@ button{
 	border-radius: 10px;
 	background-color: red;
 	position: absolute;
+}
+span{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
 }
