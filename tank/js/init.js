@@ -1,4 +1,5 @@
 var tdList = document.getElementsByTagName('td');
+var center = document.getElementsByClassName('center')[0];
 function choseTd() {
 	var arr = [];
 	arr[0] = create();
@@ -86,7 +87,15 @@ function drawWall(arr) {
     }
 }
 
+function createMytank() {
+    var myTank = document.createElement('div');
+    myTank.className = 'mytank';
+    myTank.direct = 'top';
+    center.appendChild(myTank);
+    return myTank;
+}
 document.getElementById('init').onclick = choseTd;
+var myTank = createMytank();
 // Promise.resolve().then(function(){
 // 	var script = document.createElement('script');
 // 	script.src = 'js/controller.js';
