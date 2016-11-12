@@ -1,9 +1,19 @@
 var start = document.getElementById('start');
+var value = true;
+var moveTimer;
+var createTimer;
+var fireTimer;
 start.onclick = function () {
-	var tank = createTank(center);
-	var tank1 = tank.create();
-	tank1.run();
-	tank1.fire(tank1);
+	createTimer = setInterval(function() {
+		if (value) {
+			// console.log(1);
+			value = false;
+			var tank = createTank(center);
+		    tank1 = tank.create();
+		    tank1.run();
+			tank1.fire(tank1);
+		}
+	},5000);
 	document.onkeydown = function(event) {
 		var tankX = myTank.offsetLeft;
 		var tankY = myTank.offsetTop;
@@ -61,8 +71,10 @@ start.onclick = function () {
 					center.appendChild(bullet);
 					//处理子弹的逻辑
 					var timer = setInterval(function(){
-						var ermyTankY = tank1.offsetTop;
-	                    var ermyTankX = tank1.offsetLeft;
+						if (tank1) {
+							var ermyTankY = tank1.offsetTop;
+	                        var ermyTankX = tank1.offsetLeft;
+						}
 	                    var y = bullet.offsetTop;
 	                    var x = bullet.offsetLeft;
 					    if (bullet.offsetTop <= 0) {
@@ -75,9 +87,8 @@ start.onclick = function () {
 	                        center.removeChild(tank1);
 	                        bullet = null;
 	                        tank1 = null;
-	                        // value = false;
+	                        value = true;
 					    }else {
-	                        console.log(1);
 	                        var n = Math.floor(y/60)*10;
 	                        var m = Math.floor(x/60);
 	                        // console.log(n,m);
@@ -97,6 +108,7 @@ start.onclick = function () {
 	                        //碰到对方老巢
 	                        if (n == 0 && (m == 4 || m == 5)) {
 	                        	alert("YOU WIN"); 
+	                        	clearInterval(createTimer);
 	                        	clearInterval(timer);
 	                            center.removeChild(bullet);
 	                            bullet = null;
