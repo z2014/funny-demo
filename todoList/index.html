@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+        #example{
+        	width: 400px;
+        	margin: 100px auto;
+        }
+        .list{
+        	width: 300px;
+        }
+        ul{
+        	margin: 0;
+        	padding:0;
+        	width: 300px;
+        	background-color: #ccc;
+        }
+        li{
+        	list-style-type: none;
+        	background-color: white;
+        	border: 1px solid #ccc;
+        	word-wrap: break-word;
+        	height: auto;
+        	font-size: 20px;
+        	font-family: '微软雅黑';
+        	box-shadow: 2px 2px 5px #ccc;
+        	line-height: 40px;
+        	text-align: left;
+        }
+        .item{
+        	font-size: 20px;
+        	box-shadow: 1px 1px #ccc;
+        	height: 40px;
+        	line-height: 40px;
+        	text-align: left;
+        }
+        .right{
+        	float: right;
+        }
+	</style>
+    <script type="text/javascript" src="vendor/react.js"></script>
+	<script type="text/javascript" src="vendor/react-dom.js"></script>
+	<script type="text/javascript" src="vendor/browser.min.js"></script>
+	<script src="https://npmcdn.com/react-router@2.4.0/umd/ReactRouter.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<script type="text/babel">
+		var TodoList = React.createClass({
+		    render: function () {
+	            return (
+	                <div>
+	                  <Form/>
+	                </div>
+	            );
+	        }
+		});
+		var Form = React.createClass({
+		    getInitialState:function() {
+		        return {
+		            item:[],
+		            text:'add task'
+		        }
+		    },
+		    change:function(e) {
+		        var itemArray = this.state.item;
+		        itemArray.push({
+		            text:this._input.value,
+		            key:new Date(),
+		            time:new Date()
+		        });
+		        this.setState({
+		            item:itemArray
+		        });
+		    },
+		    render:function() {
+		        var InputClass = {
+		            width:300,
+		            height:40,
+		            fontSize:20,
+		            margin:0,
+		            padding:0
+		        };
+		        var btnClass = {
+		            width:50,
+		            height:44,
+		            backgroundColor:'#ccc',
+		            display:'inline-block',
+		            margin:0,
+		            padding:0,
+		            verticalAlign:'top',
+                    textAlign:'center',
+                    lineHeight:'42px',
+                    color:'white',
+                    fontWeight:'bold',
+                    fontSize:'20px'
+		        };
+		        var text = this.state.text;
+		        var self = this;
+		        return (
+		            <div>
+		            	<input ref={
+		                function(el) {
+		                    self._input = el;
+		                }
+		                } style={InputClass} placeholder={text}></input>
+		                <span style={btnClass} onClick={this.change}>add</span>
+		                <Item items={this.state.item} className='list'/>
+		            </div>
+		        );
+		    }
+		});
+		var Item = React.createClass({
+		    render:function() {
+		        var items = this.props.items;
+		        function createLi(item) {
+		            return <li key={item.key}>{item.text}<span className='right'>{item.time.getFullYear()}/{item.time.getMonth()+1}/{item.time.getDate()}</span></li>
+		        }
+		        var itemBlock = items.map(createLi);
+		        return (
+                    <ul>{itemBlock}</ul>
+		        )
+		    }
+		});
+		ReactDOM.render(
+		    <TodoList name="world"/>,
+		    document.getElementById('example')
+		);
+	</script>
+</body>
+</html>

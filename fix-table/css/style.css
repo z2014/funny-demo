@@ -1,0 +1,53 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	height: 2000px;
+}
+table{
+	position: absolute;
+	border-collapse: collapse;
+}
+td{
+	border: 1px solid black;
+	position: relative;
+	background-color: white;
+	text-align: center;
+	color: black;
+	font-weight: bold;
+	transition: all 0.5s ease;
+}
+th{
+	border: 1px solid black;
+	position: relative;
+	background-color: #ccc;
+	text-align: center;
+}
+td:hover{
+	background-color: blue;
+	opacity: 0.5;
+}
+div{
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	float: left;
+}
+.ascending{
+	position: relative;
+	left: 15px;
+}
+.descending{
+	position: relative;
+	left: 30px;
+}
+span:hover{
+	cursor: pointer;
+}
+/*.fix th{
+	position: fixed;
+	top: 0;
+	height: 50px;
+	width: 300px;
+}*/
