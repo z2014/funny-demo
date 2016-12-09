@@ -1,0 +1,18 @@
+固定表头[demo](https://z2014.github.io/funny-demo/fix-table/index.html)，向页面传递参数即可生成想要的table数据，将createTable方法暴露给window对象，该方法接受一个对象作为参数，
+eg:
+```
+var param = {
+	width:200,
+	height:50,
+	top:100,
+	isSort:[true,false,true],
+	thead:['num','name','Math'	],
+    tbody:[
+            [001,'li',90,],
+            [002,'wang',95],
+            [003,'zhang',99],
+            [003,'zhang',88]
+          ]
+};
+window.createTable(param);
+```

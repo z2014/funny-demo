@@ -39,9 +39,13 @@
 	width: 280px;
 	top: 20px;
 }
-button{
+.button{
 	width: 50px;
 	height: 25px;
+	background-color: #ccc;
+	text-align: center;
+	line-height: 25px;
+	cursor:pointer; ;
 }
 .block{
 	background-color: yellow;
