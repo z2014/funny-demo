@@ -13,7 +13,7 @@ start.onclick = function () {
 		    tank1.run();
 			tank1.fire(tank1);
 		}
-	},5000);
+	},3000);
 	document.onkeydown = function(event) {
 		var tankX = myTank.offsetLeft;
 		var tankY = myTank.offsetTop;
@@ -119,63 +119,3 @@ start.onclick = function () {
 		}
 	}
 }
-
-
-
-
-
-
-
-
-// var p = new Promise(function() {
-// 	return btn == true;
-// });
-// p.then(function(msg){
-// 	console.log(1);
-// },function(){
-// 	console.log(msg);
-// })
-
-// setTimeout(function(){console.log(bullet);},10000);
-	            // addHit(bullet);
-                
-                // switch(myTank.direct) {
-                // 	case 'top': bullet.style.left = 15 + 'px';
-                // 	            bullet.style.top = -5 + 'px';
-                // 	            setInterval(function(){
-                // 	           	    if (bullet.offsetTop <= -600) {
-                // 	           	        myTank.removeChild(bullet);
-                // 	           	    }else{
-                // 	           	   	    bullet.style.top = bullet.offsetTop - 10 +'px';
-                // 	           	    }
-                // 	            },50);
-                // 	            break;
-                	// case 'left':bullet.style.left = -5 + 'px';
-                	//             bullet.style.top = 15 + 'px';
-                	//             setInterval(function(){
-                	//            	    if (bullet.offsetLeft <= -600) {
-                	//            	        myTank.removeChild(bullet);
-                	//            	    }else{
-                	//            	   	    bullet.style.left = bullet.offsetLeft - 10 +'px';
-                	//            	    }
-                	//             },50);
-                	//             break;
-                	// case 'right':bullet.style.left = 40 + 'px';
-                	//              bullet.style.top = 15 + 'px';
-                	//              break;
-                	// case 'bottom':bullet.style.left = 15 + 'px';
-                	//               bullet.style.top = 40 + 'px';
-                	//               break;
-                // }
-
-
-	// var timer2 = setInterval(function(){
-	// 	var tankX = myTank.offsetLeft + 195;
-	// 	var tankY = myTank.offsetTop + 540;
-	// 	// console.log(tankX,tankY);
-	// 	var n = Math.floor(tankY/60)*10;
-	// 	var m = Math.ceil(tankX/60);
-	// 	switch(tdList[n+m].className){
-	// 		case 'block':
-	// 	}
-	// },50);

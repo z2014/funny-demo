@@ -64,6 +64,13 @@ function createBullet(factory,tankDiv) {
 			    var x = Math.floor(m/60);
 				var n = bullet.offsetTop;
 				var y = Math.ceil(n/60)*10;
+				var bulletY = Math.floor(n/60);
+				// console.log('mytank'+myTank);
+				var myTankX = Math.floor(myTank.offsetLeft/60);
+				var myTankY = Math.floor(myTank.offsetTop/60);
+				console.log(myTankX,myTankY);
+				console.log(x,y);
+				debugger;
 				bullet.style.top = bullet.offsetTop + 10 + 'px';
 				if(n > 540) {
 					factory.removeChild(bullet);
@@ -79,6 +86,14 @@ function createBullet(factory,tankDiv) {
 					bullet = null;
 					clearInterval(timer3);
 				}else if (x > 4 && x <7 && y == 100) {
+					alert('YOU LOSE');
+					factory.removeChild(bullet);
+					clearInterval(timer3);
+					clearInterval(moveTimer);
+					clearInterval(createTimer);
+					clearInterval(fireTimer);
+					bullet = null;
+				}else if (x == myTankX && bulletY == myTankY) {
 					alert('YOU LOSE');
 					factory.removeChild(bullet);
 					clearInterval(timer3);

@@ -10,3 +10,6 @@ function hit(n,m,dir) {
 function upcase(a) {
 	return a.replace('t','T').replace('l','L');
 }
+function test() {
+	a
+}
