@@ -96,6 +96,7 @@ function createBullet(factory,tankDiv) {
 				}else if (x == myTankX && bulletY == myTankY) {
 					alert('YOU LOSE');
 					factory.removeChild(bullet);
+					factory.removeChild(myTank);
 					clearInterval(timer3);
 					clearInterval(moveTimer);
 					clearInterval(createTimer);
