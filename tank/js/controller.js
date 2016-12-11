@@ -13,7 +13,7 @@ start.onclick = function () {
 		    tank1.run();
 			tank1.fire(tank1);
 		}
-	},5000);
+	},3000);
 	document.onkeydown = function(event) {
 		var tankX = myTank.offsetLeft;
 		var tankY = myTank.offsetTop;
